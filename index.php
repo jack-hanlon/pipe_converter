@@ -68,9 +68,14 @@
   </style>
   <!-- Upload Button and Modal -->
   <!--------------------------------------------------------------------------------------------->
+</br>
+  <h1><center><font color="white">Upload a .csv file to convert</font></center></h2>
+</br>
+
+
 </br></br>
 <center>
-<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Upload a Raw File</button>
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-upload"></i> Upload </button>
 </center>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -97,15 +102,23 @@
   </div>
 </div>
 <!--------------------------------------------------------------------------------------------->
-
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br>
 
 <center>
 <form action="download.php" method="post">
-           <button type="submit" name="submit" value="Download File" class="btn"><i class="fa fa-download"></i> Download</button>
+           <button type="submit" name="submit" value="Download File" class="btn"><i class="fa fa-download"></i> Download </button>
        </form>
 </center>
-
-
+</br>
+<center><div class="card" style="width: 18rem;">
+<div class="card-header">
+  1. Press "Upload" then "Choose File" from a folder on your computer"       <i class="fa fa-desktop" aria-hidden="true"></i>
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">2. Once selected press "Open" then hit "Submit" in the modal    <i class="fa fa-check-square" aria-hidden="true"></i></li>
+  <li class="list-group-item">3. Wait a few seconds for the conversion process to complete.    <i class="fa fa-clock-o" aria-hidden="true"></i></li>
+  <li class="list-group-item">4. Press "Download" to get your pipe delimited version in .txt format   <i class="fa fa-download"></i></li>
+</ul>
+</div></center>
 </body>
 </html>
