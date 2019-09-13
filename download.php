@@ -1,4 +1,5 @@
 <?php
+
 //Scrape the name of the file that was converted
 $files = glob("uploads/*.csv");
 foreach($files as $filepath) {
