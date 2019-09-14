@@ -34,13 +34,13 @@ if (($handle = fopen($Target_file, "r")) !== FALSE) {
     for ($c=0; $c < $count; $c++) {
       //A: if it is not the last column add to file the content and a | after the content
       if($data[$c] != ''){
-          if($data[$c] == "Unit" || $data[$c] == " Unit " || $data[$c] == "Unit " || $data[$c] == " Unit"){
+          if($data[$c] == "Unit" || $data[$c] == " Unit " || $data[$c] == "Unit " || $data[$c] == " Unit" || $data[$c] == "UNIT"){
                   $unit_col = $c;
-          }else if($data[$c] == "Amount" || $data[$c] == " Amount " || $data[$c] == "Amount " || $data[$c] == " Amount"){
+          }else if($data[$c] == "Amount" || $data[$c] == " Amount " || $data[$c] == "Amount " || $data[$c] == " Amount" || $data[$c] == "AMOUNT"){
                   $amount_col = $c;
-          }else if($data[$c] == "Description" || $data[$c] == " Description " || $data[$c] == "Description " || $data[$c] == " Description"){
+          }else if($data[$c] == "Description" || $data[$c] == " Description " || $data[$c] == "Description " || $data[$c] == " Description" || $data[$c] == "DESCR"){
                   $desc_col = $c;
-          }else if($data[$c] == "MonthEnter" || $data[$c] == " MonthEnter " || $data[$c] == "MonthEnter " || $data[$c] == " MonthEnter"){
+          }else if($data[$c] == "MonthEnter" || $data[$c] == " MonthEnter " || $data[$c] == "MonthEnter " || $data[$c] == " MonthEnter" || $data[$c] == "DATE" || $data[$c] == "DATE " ){
                   $date_col = $c;
           }
 
@@ -50,6 +50,9 @@ if (($handle = fopen($Target_file, "r")) !== FALSE) {
               if($unit_col == $c){
                   $out_order_arr[$desired_unit_col] = $data[$c]."|";
               }else if($amount_col == $c){
+                    if(strpos($data[$c],'(') != FALSE){
+                      str_replace(array("(",")"),array("-",""),$data[$c]);
+                    }
                   $out_order_arr[$desired_amount_col] = $data[$c]."|";
               }else if($date_col == $c){
                   $out_order_arr[$desired_date_col] = $data[$c]."|";
@@ -87,7 +90,7 @@ if (($handle = fopen($Target_file, "r")) !== FALSE) {
   }
 }
 
-  if($row > 2 && $unit_col != -1 && $amount_col != -1 && $desc_col != -1 && $date_col != -1){
+  if($row > 2 && $unit_col != -1 && $amount_col != -1 && $desc_col != -1 && $date_col != -1 && $data[0] != "" ){
 file_put_contents("uploads/pipe_delimited.txt",$out_order_arr,FILE_APPEND);
 file_put_contents("uploads/pipe_delimited.txt","\n",FILE_APPEND);
 }
