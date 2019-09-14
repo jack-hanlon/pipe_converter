@@ -6,11 +6,12 @@ $unit_col = -1;
 $amount_col = -1;
 $desc_col = -1;
 $date_col = -1;
+$resortid_col = -1;
 $desired_date_col = 0;
 $desired_unit_col = 1;
 $desired_amount_col = 2;
 $desired_desc_col = 3;
-
+$desired_resortid_col = 4;
 //open a file handle for the upload file
 if (($handle = fopen($Target_file, "r")) !== FALSE) {
   //while theres another row called $data get it from $handle
@@ -42,6 +43,8 @@ if (($handle = fopen($Target_file, "r")) !== FALSE) {
                   $desc_col = $c;
           }else if($data[$c] == "MonthEnter" || $data[$c] == " MonthEnter " || $data[$c] == "MonthEnter " || $data[$c] == " MonthEnter" || $data[$c] == "DATE" || $data[$c] == "DATE " ){
                   $date_col = $c;
+          }else if($data[$c] == "ResortID" || $data[$c] == " ResortID " || $data[$c] == "ResortID " || $data[$c] == " ResortID" || $data[$c] == "RESORTID" || $data[$c] == "RESORTID " ){
+                  $resortid_col = $c;
           }
 
 
@@ -50,14 +53,13 @@ if (($handle = fopen($Target_file, "r")) !== FALSE) {
               if($unit_col == $c){
                   $out_order_arr[$desired_unit_col] = $data[$c]."|";
               }else if($amount_col == $c){
-                    if(strpos($data[$c],'(') != FALSE){
-                      str_replace(array("(",")"),array("-",""),$data[$c]);
-                    }
                   $out_order_arr[$desired_amount_col] = $data[$c]."|";
               }else if($date_col == $c){
                   $out_order_arr[$desired_date_col] = $data[$c]."|";
               }else if($desc_col == $c){
-                  $out_order_arr[$desired_desc_col] = $data[$c];
+                  $out_order_arr[$desired_desc_col] = $data[$c]."|";
+              }else if($resortid_col == $c){
+                  $out_order_arr[$desired_resortid_col] = $data[$c];
               }
 
 

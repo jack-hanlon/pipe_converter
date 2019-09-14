@@ -52,7 +52,7 @@
           <a class="nav-link" href="http://localhost:8080/raw_pipe_converter/about.php">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:8080/raw_pipe_converter/contact.php">Contact</a>
+          <a class="nav-link" href="http://localhost:8080/raw_pipe_converter/help.php">Help</a>
         </li>
 
       </ul>

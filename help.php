@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -46,20 +47,17 @@
         }
 
   </style>
-  <!-- Upload Button and Modal -->
-  <!--------------------------------------------------------------------------------------------->
-</br></br>
-<div class="jumbotron">
-  <h1 class="display-4">Too busy to do spreadsheets manually  ?</h1>
-  <p class="lead">This tool is perfect for your needs, taking in unformatted raw csv files, analyzing and outputting in pipe delimited format.</p>
-  <hr class="my-4">
-  <p>By harnessing this tool one can vastly accelerate their importing process to the OwnerRelations Accounting Software!</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="http://localhost:8080/raw_pipe_converter/" role="button">Get Started</a>
-  </p>
+
+
+</br></br></br></br>
+<div class="card">
+<div class="card-body">
+  <h2>Before Using this Converter:</h2></br>
+<h5>  1. Verify your input file is in .csv format.</h5> Do this by pressing "Save as" and .csv in Microsoft Excel.</br></br>
+<h5>  2. Verify your "Amount" column are formatted as numbers:</h5>
+  Before uploading a .csv file into the converter one should note that occasionally Microsoft Excel saves columns of numbers as a column of strings. This will lead to the converter adding brackets around a negative number rather than putting a negative sign in front. A simple easy solution to this is enter the number 1 in a separate box -> Copy it -> Select the column you wish to turn into Numbers -> Go to Home/Clipboard/Paste/Paste Special -> Then select “Multiply” and hit enter. Excel will now consider this column as Numbers.</br></br>
+<h5>  3. Verify you have a ResortID column as the last column of your .csv file. </h5>Enter the word "ResortID" into the first row of that column and then enter your ResortID number for every data filled row.
 </div>
-
-
-
+</div>
 
 </body>
